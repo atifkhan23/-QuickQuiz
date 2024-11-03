@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz_form.css') }}">
+</head>
+<body>
+    <h1>QuickQuiz</h1>
+    <div class="container">
+        <h1>Generate Your Quiz</h1>
+        <form action="/generate_quiz" method="post">
+            <label for="user_choice">Choose input type:</label><br>
+            <input type="radio" id="text_input" name="user_choice" value="1" checked>
+            <label for="text_input">Text</label>
+            <input type="radio" id="image_input" name="user_choice" value="2">
+            <label for="image_input">Image</label>
+            <br><br>
+
+            <label for="text_content">Text Content (if chosen):</label>
+            <textarea id="text_content" name="text_content" placeholder="Enter your content here..."></textarea>
+
+            <label for="image_path">Image Path (if chosen):</label>
+            <input type="text" id="image_path" name="image_path" placeholder="e.g., C:/path/to/image.jpg">
+
+            <label for="num_questions">Number of Questions:</label>
+            <input type="number" id="num_questions" name="num_questions" min="1" max="10" value="5">
+
+            <label for="difficulty_level">Difficulty Level:</label>
+            <select id="difficulty_level" name="difficulty_level">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <label for="question_type">Question Type:</label>
+            <select id="question_type" name="question_type">
+                <option value="mcqs">MCQs</option>
+                <option value="theory">Theory</option>
+            </select>
+
+            <button type="submit">Generate Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

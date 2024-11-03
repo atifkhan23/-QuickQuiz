@@ -1,0 +1,27 @@
+/* Quiz Results Specific Styles */
+.quiz-item {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.quiz-item ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz-item li {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}

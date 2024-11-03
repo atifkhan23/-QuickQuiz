@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz_result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Generated Quiz</h1>
+        <h2>Difficulty Level: {{ difficulty_level.capitalize() }}</h2>
+
+        {% for item in quiz_data %}
+        <div class="quiz-item">
+            <h3>Question {{ item.question_number }}:</h3>
+            <p>{{ item.question|safe }}</p>  <!-- Use |safe to render HTML -->
+
+            {% if item.options %}
+            <ul>
+                {% for option in item.options %}
+                <li>{{ option }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if item.hint %}
+            <p><strong>Hint:</strong> {{ item.hint }}</p>
+            {% endif %}
+
+            {% if item.correct_option_text %}
+            <p><strong>Answer:</strong> {{ item.correct_option_text }}</p>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>
